@@ -37,24 +37,27 @@ function divide($x, $y){
 	return $x / $y;
 }
 if ($oper = "add") {
+  res = add(htmlentities($_POST['num1'], htmlentities($_POST['num2'])
   printf("<p><strong>%d</strong></p>\n",
-  		htmlentities($_POST['name'])
+  		res)
   	);
 } elseif ($oper = "sub") {
+  res = subtract(htmlentities($_POST['num1'], htmlentities($_POST['num2'])
   printf("<p><strong>%d</strong></p>\n",
-  		htmlentities($_POST['name'])
+  		res)
   	);
 } elseif ($oper = "mul") {
+  res = multiply(htmlentities($_POST['num1'], htmlentities($_POST['num2'])
   printf("<p><strong>%d</strong></p>\n",
-  		htmlentities($_POST['name'])
+  		res)
   	);
 } elseif ($oper = "div") {
+  res = divide(htmlentities($_POST['num1'], htmlentities($_POST['num2'])
   printf("<p><strong>%d</strong></p>\n",
-  		htmlentities($_POST['name'])
+  		res)
   	);
 } else {
-  printf("Error"
-  	);
+  printf("Error");
 }
 ?>
 </body>
