@@ -7,7 +7,7 @@
 <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
   <p>
     <label for="num1input">Enter number:</label>
-    <input type="number" name="num1" id="num1input" />
+    <input type="number" step="any" name="num1" id="num1input" />
   </p>
   <p>
     <input type="radio" name="oper" value="add" id="addinput"><label for ="addinput">ADD</label>
@@ -17,7 +17,7 @@
   </p>
   <p>
     <label for="num2input">Enter number:</label>
-    <input type="number" name="num2" id="num2input" />
+    <input type="number" step="any" name="num2" id="num2input" />
   </p>
   <p>
     <input type="submit" value="Calculate!" />
@@ -38,17 +38,22 @@ function divide($x=0, $y=1){
 }
 $num1 = (int) $_POST["num1"];
 $num2 = (int) $_POST["num2"];
+$oper = $_POST["oper"];
 
-if ($oper = "add") {
-  printf("<p><strong>Answer: %d</strong></p>\n", add($num1, $num2));
-} elseif ($oper = "sub") {
-  printf("<p><strong>Answer: %d</strong></p>\n", subtract($num1, $num2));
-} elseif ($oper = "mul") {
-  printf("<p><strong>Answer: %d</strong></p>\n", multiply($num1, $num2));
-} elseif ($oper = "div") {
-  printf("<p><strong>Answer: %d</strong></p>\n", divide($num1, $num2));
+if ($oper == "add") {
+  printf("<p><strong>Answer: %.2f</strong></p>\n", add($num1, $num2));
+} elseif ($oper == "sub") {
+  printf("<p><strong>Answer: %.2f</strong></p>\n", subtract($num1, $num2));
+} elseif ($oper == "mul") {
+  printf("<p><strong>Answer: %.2f</strong></p>\n", multiply($num1, $num2));
+} elseif ($oper == "div") {
+	if ($num2 == 0) {
+		printf("<p><strong>Error: Cannot divide by zero!</strong></p>\n");
+	} else {
+  		printf("<p><strong>Answer: %.2f</strong></p>\n", divide($num1, $num2));
+	} 
 } else {
-  printf("Error: Please select an operation");
+  printf("<p><strong>Please select an operation</strong></p>\n");
 }
 ?>
 </body>
