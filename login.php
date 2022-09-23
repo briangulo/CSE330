@@ -10,23 +10,30 @@
       <input type="submit" value="Take me back" />
     </form>
   </p>
-  
+
   <?php
   $user = trim(strtolower($_POST['user']));
   $fname = "/home/brian/file_sharing/users.txt";
   $h = fopen($fname, "r");
+  $exists = FALSE;
 
   while( !feof($h) ){
   	if ( $user == trim(fgets($h)) ) {
-      header("Location: interface.html");
+      $exists = TRUE;
     } else {
       continue;
     }
   }
   fclose($h);
-  <p>printf("User %s does not exist. Would you like to create a new user?", htmlentities($user));</p>
-  #header("Location: new_user_prompt.html");
-  #exit;
+
+  if ($exists) {
+    header("Location: interface.html");
+    exit;
+  } else {
+    header("Location: new_user_prompt.html");
+    exit;
+  }
+  #<p>printf("User %s does not exist. Would you like to create a new user?", htmlentities($user));</p>
   ?>
 
 </body>
