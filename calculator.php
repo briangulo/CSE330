@@ -4,21 +4,29 @@
 	<title>Calculator</title>
 </head>
 <body>
-  <form>
-  <p><label><input type="radio" name="int1" value=1>1</label>
-  <label><input type="radio" name="int2" value=2>2</label>
-  <label><input type="radio" name="int3" value=3>3</label>
-  <p><label><input type="radio" name="int4" value=4>4</label>
-  <label><input type="radio" name="int5" value=5>5</label>
-  <label><input type="radio" name="int6" value=6>6</label>
-  <label><input type="radio" name="int7" value=7>7</label>
-  <p><label><input type="radio" name="int8" value=8>8</label>
-  <label><input type="radio" name="int9" value=9>9</label>
-  <p><label><input type="radio" name="int0" value=0>0</label>
-	<p><button>Calculate!</button>
+  <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+    <p>
+      <label><input type="radio" name="add" value="+"></label>
+      <label><input type="radio" name="sub" value="-"></label>
+      <label><input type="radio" name="mul" value="*"></label>
+      <label><input type="radio" name="div" value="/"></label>
+  	<p>
+      <input type="submit" value="Print in Bold" />
+    </p>
   </form>
 <?php
-echo "\t<p>Hello World!</p>\n";
+function add($x, $y){
+	return $x + $y;
+}
+function subtract($x, $y){
+	return $x - $y;
+}
+function multiply($x, $y){
+	return $x * $y;
+}
+function divide($x, $y){
+	return $x / $y;
+}
 ?>
 </body>
 </html>
