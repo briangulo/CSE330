@@ -37,25 +37,17 @@ function divide($x, $y){
 	return $x / $y;
 }
 if ($oper = "add") {
-  res = add(htmlentities($_POST['num1'], htmlentities($_POST['num2'])
-  printf("<p><strong>%d</strong></p>\n",
-  		res)
-  	);
+  res = add(htmlentities($_POST['num1']), htmlentities($_POST['num2']));
+  printf("<p><strong>%d</strong></p>\n", res);
 } elseif ($oper = "sub") {
-  res = subtract(htmlentities($_POST['num1'], htmlentities($_POST['num2'])
-  printf("<p><strong>%d</strong></p>\n",
-  		res)
-  	);
+  res = subtract(htmlentities($_POST['num1']), htmlentities($_POST['num2']));
+  printf("<p><strong>%d</strong></p>\n", res);
 } elseif ($oper = "mul") {
-  res = multiply(htmlentities($_POST['num1'], htmlentities($_POST['num2'])
-  printf("<p><strong>%d</strong></p>\n",
-  		res)
-  	);
+  res = multiply(htmlentities($_POST['num1']), htmlentities($_POST['num2']));
+  printf("<p><strong>%d</strong></p>\n", res);
 } elseif ($oper = "div") {
-  res = divide(htmlentities($_POST['num1'], htmlentities($_POST['num2'])
-  printf("<p><strong>%d</strong></p>\n",
-  		res)
-  	);
+  res = divide(htmlentities($_POST['num1']), htmlentities($_POST['num2']));
+  printf("<p><strong>%d</strong></p>\n", res);
 } else {
   printf("Error");
 }
