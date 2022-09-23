@@ -8,7 +8,7 @@ $fname = "/home/brian/file_sharing/users.txt";
 $h = fopen($fname, "r");
 
 while( !feof($h) ){
-	if ( $user == trim(fgets($h)) ) {
+	if ( $user === trim(fgets($h)) ) {
     header("Location: interface.html");
   } else {
     continue;
@@ -16,7 +16,12 @@ while( !feof($h) ){
 }
 fclose($h);
 
-<p>printf('User %s does not exist. Would you like to create a new user?', htmlentities($user));</p>
+<p>
+printf('User %s does not exist. Would you like to create a new user?',
+htmlentities($user));
+</p>
+?>
+
 <p>
   <form action="new_user.html" method="POST">
     <input type="submit" value="Yes" />
@@ -25,6 +30,5 @@ fclose($h);
     <input type="submit" value="Take me back" />
   </form>
 </p>
-?>
 </body>
 </html>
