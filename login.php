@@ -22,14 +22,14 @@
     header("Location: interface.html");
     exit;
   } else {
-    echo printf("<p>User %s does not exist. Would you like to create a new user?</p>",
+    printf("<p>User %s does not exist. Would you like to create a new user?</p>",
     htmlentities($user));
-    echo "<form action=\"new_user.html\" method=\"POST\">"
-    echo "<p><input type=\"submit\" value=\"Yes\" /></p>"
-    echo "</form>"
-    echo "<form action=\"login.html\" method=\"POST\">"
-    echo "<p><input type=\"submit\" value=\"Take me back\" /></p>"
-    echo "</form>"
+    echo "<form action=\"new_user.html\" method=\"POST\">";
+    echo "<p><input type=\"submit\" value=\"Yes\" /></p>";
+    echo "</form>";
+    echo "<form action=\"login.html\" method=\"POST\">";
+    echo "<p><input type=\"submit\" value=\"Take me back\" /></p>";
+    echo "</form>";
     exit;
   }
   ?>
