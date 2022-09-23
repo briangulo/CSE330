@@ -10,10 +10,10 @@
     <input type="number" name="num1" id="num1input" />
   </p>
   <p>
-    <label><input type="radio" name="oper" value="add">ADD</label>
-    <label><input type="radio" name="oper" value="sub">SUBTRACT</label>
-    <label><input type="radio" name="oper" value="mul">MULTIPLY</label>
-    <label><input type="radio" name="oper" value="div">DIVIDE</label>
+    <input type="radio" name="oper" value="add" id="addinput"><label for ="addinput">ADD</label>
+    <input type="radio" name="oper" value="sub" id="subinput"><label for ="subinput">SUBTRACT</label>
+    <input type="radio" name="oper" value="mul" id="mulinput"><label for ="mulinput">MULTIPLY</label>
+    <input type="radio" name="oper" value="div" id="divinput"><label for ="divinput">DIVIDE</label>
   </p>
   <p>
     <label for="num2input">Enter number:</label>
@@ -38,20 +38,15 @@ function divide($x=0, $y=1){
 }
 $num1 = (int) $_POST["num1"];
 $num2 = (int) $_POST["num2"];
-#printf("<p><strong>%d</strong></p>\n", add($num1, $num2));
 
 if ($oper = "add") {
-  res = add($_POST['num1'], $_POST['num2']);
-  printf("<p><strong>Answer: %d</strong></p>\n", res);
+  printf("<p><strong>Answer: %d</strong></p>\n", add($num1, $num2));
 } elseif ($oper = "sub") {
-  res = subtract($_POST['num1'], $_POST['num2']);
-  printf("<p><strong>Answer: %d</strong></p>\n", res);
+  printf("<p><strong>Answer: %d</strong></p>\n", subtract($num1, $num2));
 } elseif ($oper = "mul") {
-  res = multiply($_POST['num1'], $_POST['num2']);
-  printf("<p><strong>Answer: %d</strong></p>\n", res);
+  printf("<p><strong>Answer: %d</strong></p>\n", multiply($num1, $num2));
 } elseif ($oper = "div") {
-  res = divide($_POST['num1'], $_POST['num2']);
-  printf("<p><strong>Answer: %d</strong></p>\n", res);
+  printf("<p><strong>Answer: %d</strong></p>\n", divide($num1, $num2));
 } else {
   printf("Error: Please select an operation");
 }
