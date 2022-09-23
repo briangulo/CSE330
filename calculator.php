@@ -4,14 +4,21 @@
 	<title>Calculator</title>
 </head>
 <body>
-  <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="GET">
+<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="GET">
   <p>
-    <label><input type="radio" name="oper" value="+">ADD</label>
-    <label><input type="radio" name="oper" value="-">SUBTRACT</label>
-    <label><input type="radio" name="oper" value="*">MULTIPLY</label>
-    <label><input type="radio" name="oper" value="/">DIVIDE</label>
+    <label for="num1">Enter number:</label>
+    <input type="number" name="num1" id="num1" />
   </p>
-  <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="GET">
+  <p>
+    <label><input type="radio" name="oper" value="add">ADD</label>
+    <label><input type="radio" name="oper" value="sub">SUBTRACT</label>
+    <label><input type="radio" name="oper" value="mul">MULTIPLY</label>
+    <label><input type="radio" name="oper" value="div">DIVIDE</label>
+  </p>
+  <p>
+    <label for="num2">Enter number:</label>
+    <input type="number" name="num2" id="num2" />
+  </p>
   <p>
     <input type="submit" value="Calculate!" />
   </p>
@@ -29,16 +36,25 @@ function multiply($x, $y){
 function divide($x, $y){
 	return $x / $y;
 }
-if ($oper = "+") {
-	echo "F";
-} elseif ($oper = "-") {
-	echo "D";
-} elseif ($oper = "*") {
-	echo "C";
-} elseif ($oper = "/") {
-	echo "B";
+if ($oper = "add") {
+  printf("<p><strong>%d</strong></p>\n",
+  		htmlentities($_POST['name'])
+  	);
+} elseif ($oper = "sub") {
+  printf("<p><strong>%d</strong></p>\n",
+  		htmlentities($_POST['name'])
+  	);
+} elseif ($oper = "mul") {
+  printf("<p><strong>%d</strong></p>\n",
+  		htmlentities($_POST['name'])
+  	);
+} elseif ($oper = "div") {
+  printf("<p><strong>%d</strong></p>\n",
+  		htmlentities($_POST['name'])
+  	);
 } else {
-	echo "A";
+  printf("Error"
+  	);
 }
 ?>
 </body>
