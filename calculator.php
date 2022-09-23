@@ -4,7 +4,7 @@
 	<title>Calculator</title>
 </head>
 <body>
-<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="GET">
+<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
   <p>
     <label for="num1input">Enter number:</label>
     <input type="number" name="num1" id="num1input" />
@@ -24,38 +24,37 @@
   </p>
 </form>
 <?php
-function add($x, $y){
+function add($x=0, $y=0){
 	return $x + $y;
 }
-function subtract($x, $y){
+function subtract($x=0, $y=0){
 	return $x - $y;
 }
-function multiply($x, $y){
+function multiply($x=0, $y=0){
 	return $x * $y;
 }
-function divide($x, $y){
+function divide($x=0, $y=1){
 	return $x / $y;
 }
 $num1 = (int) $_POST["num1"];
 $num2 = (int) $_POST["num2"];
-sprintf("<p><strong>%d</strong></p>\n", add($num1, $num2));
-/***
+#printf("<p><strong>%d</strong></p>\n", add($num1, $num2));
+
 if ($oper = "add") {
-  res = add(htmlentities($_POST['num1']), htmlentities($_POST['num2']));
-  printf("<p><strong>%d</strong></p>\n", res);
+  res = add($_POST['num1'], $_POST['num2']);
+  printf("<p><strong>Answer: %d</strong></p>\n", res);
 } elseif ($oper = "sub") {
-  res = subtract(htmlentities($_POST['num1']), htmlentities($_POST['num2']));
-  printf("<p><strong>%d</strong></p>\n", res);
+  res = subtract($_POST['num1'], $_POST['num2']);
+  printf("<p><strong>Answer: %d</strong></p>\n", res);
 } elseif ($oper = "mul") {
-  res = multiply(htmlentities($_POST['num1']), htmlentities($_POST['num2']));
-  printf("<p><strong>%d</strong></p>\n", res);
+  res = multiply($_POST['num1'], $_POST['num2']);
+  printf("<p><strong>Answer: %d</strong></p>\n", res);
 } elseif ($oper = "div") {
-  res = divide(htmlentities($_POST['num1']), htmlentities($_POST['num2']));
-  printf("<p><strong>%d</strong></p>\n", res);
+  res = divide($_POST['num1'], $_POST['num2']);
+  printf("<p><strong>Answer: %d</strong></p>\n", res);
 } else {
-  printf("Error");
+  printf("Error: Please select an operation");
 }
-***/
 ?>
 </body>
 </html>
