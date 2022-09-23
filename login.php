@@ -14,6 +14,8 @@ while( !feof($h) ){
     continue;
   }
 }
+fclose($h);
+
 <p>printf('User %s does not exist. Would you like to create a new user?', htmlentities($user));</p>
 <p>
   <form action="new_user.html" method="POST">
@@ -23,7 +25,6 @@ while( !feof($h) ){
     <input type="submit" value="Take me back" />
   </form>
 </p>
-fclose($h);
 ?>
 </body>
 </html>
