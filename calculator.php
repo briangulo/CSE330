@@ -4,15 +4,17 @@
 	<title>Calculator</title>
 </head>
 <body>
-  <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
-    <p>
-      <label><input type="radio" name="add" value="+"></label>
-      <label><input type="radio" name="sub" value="-"></label>
-      <label><input type="radio" name="mul" value="*"></label>
-      <label><input type="radio" name="div" value="/"></label>
-  	<p>
-      <input type="submit" value="Print in Bold" />
-    </p>
+  <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="GET">
+  <p>
+    <label><input type="radio" name="oper" value="+">ADD</label>
+    <label><input type="radio" name="oper" value="-">SUBTRACT</label>
+    <label><input type="radio" name="oper" value="*">MULTIPLY</label>
+    <label><input type="radio" name="oper" value="/">DIVIDE</label>
+  </p>
+  <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="GET">
+  <p>
+    <input type="submit" value="Calculate!" />
+  </p>
   </form>
 <?php
 function add($x, $y){
@@ -26,6 +28,17 @@ function multiply($x, $y){
 }
 function divide($x, $y){
 	return $x / $y;
+}
+if ($oper = "+") {
+	echo "F";
+} elseif ($oper = "-") {
+	echo "D";
+} elseif ($oper = "*") {
+	echo "C";
+} elseif ($oper = "/") {
+	echo "B";
+} else {
+	echo "A";
 }
 ?>
 </body>
