@@ -3,7 +3,7 @@
 <head><title>Login</title></head>
 <body>
 <?php
-$user = trim(strtolower($_POST['user']));
+$user = trim($_POST['user']);
 $fname = "/home/brian/file_sharing/users.txt";
 $h = fopen($fname, "r");
 
