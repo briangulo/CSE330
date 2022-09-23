@@ -7,7 +7,7 @@
 <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="GET">
   <p>
     <label for="num1">Enter number:</label>
-    <input type="number" name="num1" id="num1" />
+    <input type="number" name="num1" id="num1input" />
   </p>
   <p>
     <label><input type="radio" name="oper" value="add">ADD</label>
@@ -17,7 +17,7 @@
   </p>
   <p>
     <label for="num2">Enter number:</label>
-    <input type="number" name="num2" id="num2" />
+    <input type="number" name="num2" id="num2input" />
   </p>
   <p>
     <input type="submit" value="Calculate!" />
@@ -38,6 +38,7 @@ function divide($x, $y){
 }
 $num1 = (int) $_POST['num1'];
 $num2 = (int) $_POST['num2'];
+if
 printf("<p><strong>%d</strong></p>\n", add($num1, $num2));
 /***
 if ($oper = "add") {
