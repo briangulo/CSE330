@@ -36,6 +36,8 @@ function multiply($x, $y){
 function divide($x, $y){
 	return $x / $y;
 }
+printf(htmlentities($_POST['num1']));
+/***
 if ($oper = "add") {
   res = add(htmlentities($_POST['num1']), htmlentities($_POST['num2']));
   printf("<p><strong>%d</strong></p>\n", res);
@@ -51,6 +53,7 @@ if ($oper = "add") {
 } else {
   printf("Error");
 }
+***/
 ?>
 </body>
 </html>
