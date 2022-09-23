@@ -19,9 +19,9 @@
   while( !feof($h) ){
   	if ( $user == trim(fgets($h)) ) {
       printf('User %s already exists. Please choose another username.', htmlentities($user));
-      echo "<form action='new_user.html' method='POST'>
-        <p><input type='submit' value='OK' /></p>
-      </form>"
+      #echo "<form action='new_user.html' method='POST'>
+      #  <p><input type='submit' value='OK' /></p>
+      #</form>"
     } else {
       continue;
     }
@@ -29,22 +29,22 @@
   for($i=0; $i<count(strlen($user)); $i++){
   	  if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $user)) {
         printf('Error: only numbers and letters are allowed in your username.');
-        echo "<form action='new_user.html' method='POST'>
-          <p><input type='submit' value='Try again' /></p>
-        </form>"
+        #echo "<form action='new_user.html' method='POST'>
+        #  <p><input type='submit' value='Try again' /></p>
+        #</form>"
       }
-  } #if (fwrite($fp, $user) === FALSE) {
-    #  printf("Error: cannot store username!");
+  } if (fwrite($fp, $user) === FALSE) {
+      printf("Error: cannot store username!");
       #<form action="new_user.html" method="POST">
       #  <p><input type="submit" value="Try again" /></p>
       #</form>
-  #}
+  }
 
   printf("Success: new user %s was created!", $user);
   fclose($fp);
-  echo "<form action='interface.html' method='POST'>
-    <p><input type='submit' value='Go!' /></p>
-  </form>"
+  #echo "<form action='interface.html' method='POST'>
+  #  <p><input type='submit' value='Go!' /></p>
+  #</form>"
 
   #} else {
   #  <p>printf("Error: the user database is not writable!");</p>
