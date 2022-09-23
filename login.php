@@ -12,7 +12,7 @@
 
 <?php
 session_start();
-$user = $_POST['user']
+$user = $_POST['user'];
 $h = fopen("/home/brian/file_sharing/users.txt", "r");
 
 while( !feof($h) ){
