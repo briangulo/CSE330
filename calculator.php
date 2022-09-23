@@ -38,7 +38,6 @@ function divide($x, $y){
 }
 $num1 = (int) $_POST['num1'];
 $num2 = (int) $_POST['num2'];
-if
 printf("<p><strong>%d</strong></p>\n", add($num1, $num2));
 /***
 if ($oper = "add") {
