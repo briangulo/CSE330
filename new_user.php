@@ -33,7 +33,7 @@
         echo '<p><input type="submit" value="OK" /></p>';
         echo '</form>';
       }
-  } if (fwrite($fp, $user) === FALSE) {
+  } if (fwrite($fp, "\n".$user) === FALSE) {
       printf("Error: cannot store username!");
       echo '<form action="new_user.html" method="POST">';
       echo '<p><input type="submit" value="OK" /></p>';
@@ -42,7 +42,7 @@
 
   printf("Success: new user %s was created!", $user);
   fclose($fp);
-  
+
   echo '<form action="interface.html" method="POST">';
   echo '<p><input type="submit" value="Let\'s go!" /></p>';
   echo '</form>';
