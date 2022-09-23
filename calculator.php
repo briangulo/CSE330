@@ -53,7 +53,7 @@ if ($oper == "add") {
   		printf("<p><strong>Answer: %.2f</strong></p>\n", divide($num1, $num2));
 	} 
 } else {
-  printf("<p><strong>Please select an operation</strong></p>\n");
+  printf("<p><strong>Please perform an operation</strong></p>\n");
 }
 ?>
 </body>
