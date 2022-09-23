@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><title>Creating a New User</title></head>
+<head><title>Creating New User</title></head>
 <body>
   <?php
   $user = trim(strtolower($_POST['user']));
