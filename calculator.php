@@ -7,7 +7,7 @@
 <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
   <p>
     <label for="num1input">Enter number:</label>
-    <input type="number" required="required" step="any" name="num1" id="num1input" />
+    <input type="number" step="any" name="num1" id="num1input" required />
   </p>
   <p>
     <input type="radio" name="oper" value="add" id="addinput"><label for ="addinput">ADD</label>
@@ -17,7 +17,7 @@
   </p>
   <p>
     <label for="num2input">Enter number:</label>
-    <input type="number" required="required" step="any" name="num2" id="num2input" />
+    <input type="number" step="any" name="num2" id="num2input" required />
   </p>
   <p>
     <input type="submit" value="Calculate!" />
@@ -51,7 +51,7 @@ if ($oper == "add") {
 		printf("<p><strong>Error: Cannot divide by zero!</strong></p>\n");
 	} else {
   		printf("<p><strong>Answer: %.2f</strong></p>\n", divide($num1, $num2));
-	} 
+	}
 } else {
   printf("<p><strong>Please perform an operation</strong></p>\n");
 }

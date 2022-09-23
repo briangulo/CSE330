@@ -3,8 +3,9 @@
 <head><title>Login</title></head>
 <body>
 <?php
-$user = $_POST['user'];
-$h = fopen("/home/brian/file_sharing/users.txt", "r");
+$user = trim(strtolower($_POST['user']));
+$fname = "/home/brian/file_sharing/users.txt";
+$h = fopen($fname, "r");
 
 while( !feof($h) ){
 	if ( $user == trim(fgets($h)) ) {
@@ -13,6 +14,15 @@ while( !feof($h) ){
     continue;
   }
 }
+<p>printf('User %s does not exist. Would you like to create a new user?', htmlentities($user));</p>
+<p>
+  <form action="new_user.html" method="POST">
+    <input type="submit" value="Yes" />
+  </form>
+  <form action="login.html" method="POST">
+    <input type="submit" value="Take me back" />
+  </form>
+</p>
 fclose($h);
 ?>
 </body>
