@@ -1,7 +1,7 @@
 <?php
   session_start();
   foreach ($_POST as $key => $value) {
-    $value;
+    echo "$value";
   }
   /***
   if (unlink('/home/tutsplus/files/tmp.txt')) {
