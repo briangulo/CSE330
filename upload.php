@@ -10,7 +10,6 @@ $_SESSION['file'] = basename($_FILES['uploadedfile']['name']);
 generate_path();
 
 if( move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $_SESSION['full_path']) ){
-  chown('/srv/uploads/'.$user, $user);
 	header("Location: action_success.php");
 	exit;
 } else{

@@ -56,13 +56,16 @@
     fclose($fp);
 
     if (!file_exists($path)) {
-      mkdir($path, 0747, true);
+      mkdir($path);
       chmod($path, 0747);
+      exit;
+      /***
       if(chown($path, $user)) {
         exit;
       } else {
-        printf("Error: cannot change ownership");
-      } 
+        printf("<p>Error: cannot change ownership</p>");
+      }
+      ***/
     }
   }
   ?>
