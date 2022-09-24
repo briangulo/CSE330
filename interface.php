@@ -16,12 +16,12 @@
 	foreach($scan as $file) {
 		if (!is_dir($file)) {
 			printf("<p>%d: %s</p>", $num, htmlentities($file));
-			$base = pathinfo($file, PATHINFO_BASENAME);
+			#$base = pathinfo($file, PATHINFO_BASENAME);
 			echo "<form action=\"download.php\" method=\"POST\">";
-		  echo "<input type=\"submit\" name=\"$base\" value=\"View\" />";
+		  echo "<input type=\"submit\" name=\"$file\" value=\"View\" />";
 		  echo "</form>";
 			echo "<form action=\"delete.php\" method=\"POST\">";
-			echo "<input type=\"submit\" name=\"$base\" value=\"Delete\" />";
+			echo "<input type=\"submit\" name=\"ext.ext\" value=\"Delete\" />";
 			echo "</form>";
 			$num++;
 		}
