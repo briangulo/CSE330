@@ -46,8 +46,8 @@
           printf('Error: only numbers and letters are allowed in your username.');
           exit;
         }
-    ***/
-    } if (fwrite($fp, $user."\n") === FALSE) {
+    } ***/
+    if (fwrite($fp, $user."\n") === FALSE) {
         printf("Error: cannot store username.");
         exit;
     }
