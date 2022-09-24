@@ -56,7 +56,7 @@
     fclose($fp);
 
     if (!file_exists($path)) {
-      mkdir($path, 0777, true);
+      mkdir($path, 0746, true);
       chown($path, $user);
       exit;
     }
