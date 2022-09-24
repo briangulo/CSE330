@@ -16,7 +16,7 @@
   	</p>
   </form>
   <form action="login.php" method="POST">
-    <p><input type="submit" value="Take me back" /></p>
+    <p><input type="submit" value="Take me back to login" /></p>
   </form>
 
   <?php
@@ -49,9 +49,9 @@
     printf("Success: new user <strong>%s</strong> was created!", $user);
     fclose($fp);
 
-    echo '<form action="interface.php" method="POST">';
-    echo '<p><input type="submit" value="View user file server" /></p>';
-    echo '</form>';
+    #echo '<form action="interface.php" method="POST">';
+    #echo '<p><input type="submit" value="View user file server" /></p>';
+    #echo '</form>';
   }
   ?>
 </body>
