@@ -14,11 +14,13 @@
       <input type="submit" value="Login" />
   	</p>
   </form>
+
   <p>
   	Would you like to create a new user?
-  	<form action="new_user.html" method="POST">
+  	<form action="new_user.php" method="POST">
   		<input type="submit" value="Yes" />
   	</form>
+  </p>
 
   <?php
   if ( isset($_POST['user']) ) {
@@ -37,7 +39,7 @@
     fclose($h);
 
     if ($exists) {
-      header("Location: interface.html");
+      header("Location: interface.php");
       exit;
     } else {
       printf("<p><strong>User %s does not exist. Please create a new user.</strong></p>",

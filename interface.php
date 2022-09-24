@@ -5,7 +5,7 @@
 </head>
 <body>
 	<p>Hello World!</p>
-  <form action="login.html" method="POST">
+  <form action="login.php" method="POST">
     <input type="submit" value="Take me back" />
   </form>
 </body>
