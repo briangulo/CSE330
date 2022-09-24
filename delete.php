@@ -4,7 +4,7 @@
 
   foreach ($_POST as $key => $value) {
     $_SESSION['file'] = $key;
-    $_SESSION['key'] = $key;
+    $_SESSION["key"] = $key;
     $_SESSION['action'] = $value;
   }
   generate_path();
