@@ -7,11 +7,11 @@
 	<?php
 	session_start();
 	$user = $_SESSION['user'];
-	$userdir = '/home/brian/file_sharing/'.$user
+	$userdir = '/home/brian/file_sharing/'.$user;
 
 	printf("<p>Welcome <strong>%s!</strong></p>", htmlentities($user));
 
-	$num = 1
+	$num = 1;
 	foreach(glob($userdir.'/*.*') as $file) {
     printf("<p>%d: %s</p>", $num, $file);
 	}
