@@ -1,12 +1,13 @@
 <?php
   session_start();
   require "generate_path.php";
-  generate_path();
 
   foreach ($_POST as $key => $value) {
     $_SESSION['file'] = $key;
     $_SESSION['action'] = $value;
   }
+
+  generate_path();
 
   if (unlink($_SESSION['full_path'])) {
     header("Location: action_success.php");

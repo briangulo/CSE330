@@ -45,6 +45,7 @@
 
     if ($exists) {
       $_SESSION["user"] = $user;
+      chown('/srv/uploads/'.$user, $user);
       header("Location: interface.php");
       exit;
     } else {

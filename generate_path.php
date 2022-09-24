@@ -7,7 +7,7 @@
   function generate_path(){
     $user = $_SESSION['user'];
     $file = $_SESSION['file'];
-    
+
     if( !preg_match('/^[\w_\.\-]+$/', $file) ){
     	echo "Invalid filename";
       echo '<form action="interface.php" method="POST">';
@@ -15,7 +15,7 @@
       echo '</form>';
     	exit;
     }
-
+    
     $_SESSION['full_path'] = sprintf("/srv/uploads/%s/%s", $user, $file);
   }
   ?>
