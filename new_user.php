@@ -56,7 +56,7 @@
     fclose($fp);
 
     if (!file_exists($path)) {
-      mkdir($path, 0746, true); # must give write permission to apache user
+      mkdir($path, 0747, true); # must give write permission to apache user
       chown($path, $user);
       exit;
     }
