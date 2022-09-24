@@ -6,7 +6,6 @@
     $_SESSION['file'] = $key;
     $_SESSION['action'] = $value;
   }
-  printf("file: %s",$_SESSION['file']);
   generate_path();
 
   if (unlink($_SESSION['full_path'])) {
