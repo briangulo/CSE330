@@ -40,7 +40,7 @@
     fclose($h);
 
     if ($exists) {
-      @$_SESSION['user'] = $user;
+      $_SESSION['user'] = $user;
       header("Location: interface.php");
       exit;
     } else {
