@@ -58,8 +58,11 @@
     if (!file_exists($path)) {
       mkdir($path, 0747, true);
       chmod($path, 0747);
-      chown($path, $user);
-      exit;
+      if(chown($path, $user)) {
+        exit;
+      } else {
+        printf("Error: cannot change ownership");
+      } 
     }
   }
   ?>
