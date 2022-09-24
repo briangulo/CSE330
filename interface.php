@@ -35,7 +35,9 @@
 	echo '<input type="submit" value="Upload File" />';
 	echo '</p>';
 	echo '</form>';
-	echo "$_SESSION['full_path']";
+	if (isset($_SESSION['full_path']) ) {
+		printf("full path: ", $_SESSION['full_path']);
+	}
 
   echo "<form action=\"login.php\" method=\"POST\">";
   echo "<input type=\"submit\" value=\"Logout\" />";
