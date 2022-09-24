@@ -23,7 +23,12 @@
   </p>
 
   <?php
-  if ( isset($_POST['user']) ) {
+  if ( isset($_POST["user"]) ) {
+    
+    if( isset($_SESSION["user"]) ){
+      unset($_SESSION["user"]);
+    }
+
     session_start();
     $user = trim(strtolower($_POST['user']));
     $fname = "/home/brian/file_sharing/users.txt";
