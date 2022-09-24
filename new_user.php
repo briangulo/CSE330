@@ -48,10 +48,11 @@
     }
 
     printf("Success: new user <strong>%s</strong> was created!", $user);
-    mkdir($path, 0777, true);
-    chown($path, $user);
     fclose($fp);
 
+    mkdir($path, 0777, true);
+    chown($path, $user);
+    exit;
   }
   ?>
 </body>
