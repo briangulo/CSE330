@@ -15,8 +15,8 @@
 	$num = 1;
 	foreach($scan as $file) {
 		if (!is_dir($file)) {
-			$tmp = $file;
-			printf("<p>%d: %s</p>", $num, htmlentities($tmp));
+			#$tmp = $file;
+			printf("<p>%d: %s</p>", $num, $file);
 			echo "<form action=\"download.php\" method=\"POST\">";
 		  echo "<input type=\"submit\" name=\"$file\" value=\"View\" />";
 		  echo "</form>";
