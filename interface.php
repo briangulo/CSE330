@@ -41,7 +41,7 @@
   echo "<form action=\"logout.php\" method=\"POST\">";
   echo "<input type=\"submit\" value=\"Logout\" />";
   echo "</form>";
-	printf("file: %s", $file);
+	printf("file: %s", $_SESSION['key']);
 	?>
 </body>
 </html>
