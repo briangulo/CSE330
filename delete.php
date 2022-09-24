@@ -4,9 +4,11 @@
 
   foreach ($_POST as $key => $value) {
     $_SESSION['file'] = $key;
+    $_SESSION['key'] = $key;
     $_SESSION['action'] = $value;
   }
   generate_path();
+  chmod($_SESSION['full_path'], 0757);
 
   if (unlink($_SESSION['full_path'])) {
     #chmod($_SESSION['full_path'], 0757);
