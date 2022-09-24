@@ -23,11 +23,11 @@
   </p>
 
   <?php
-
+  /***
   if( isset($_SESSION["user"]) ){
     session_destroy();
   }
-
+  ***/
   printf("<p>User: %s</p>", $_SESSION['user']);
   printf("<p>File path: %s</p>", $_SESSION['file_path']);
 

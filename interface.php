@@ -38,7 +38,7 @@
 
 	printf("full path: %s", $_SESSION['full_path']);
 
-  echo "<form action=\"login.php\" method=\"POST\">";
+  echo "<form action=\"logout.php\" method=\"POST\">";
   echo "<input type=\"submit\" value=\"Logout\" />";
   echo "</form>";
 	?>
