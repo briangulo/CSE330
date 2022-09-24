@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><title>Login</title></head>
+<head><title>Blank</title></head>
 <body>
   <?php
   session_start();
@@ -18,7 +18,7 @@
     }
 
     $full_path = sprintf("/srv/uploads/%s/%s", $user, $file);
-    return $full_path;
+    $_SESSION['full_path'] = $full_path;
   }
   ?>
 </body>
