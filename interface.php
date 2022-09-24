@@ -14,7 +14,7 @@
 	$scan = scandir($userdir);
 	$num = 1;
 	foreach($scan as $file) {
-		if (!is_dir($userdir."/".$file)) {
+		if (!is_dir($file)) {
 			printf("<p>%d: %s</p>", $num, $file);
 			echo "<form action=\"download.php\" method=\"POST\">";
 		  echo "<input type=\"submit\" name='file'.$num value=\"View\" />";
