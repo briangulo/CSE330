@@ -45,9 +45,12 @@
 
     if ($exists) {
       $_SESSION["user"] = $user;
-      chown('/srv/uploads/'.$user, $user);
-      header("Location: interface.php");
-      exit;
+      if (chown('/srv/uploads/'.$user, $user)){
+        header("Location: interface.php");
+        exit;
+      } else {
+        printf("Error: cannot change ownership.");
+      }
     } else {
       printf("<p><strong>User <strong>%s</strong> does not exist. Please create a new user.</strong></p>",
       htmlentities($user));
