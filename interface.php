@@ -21,7 +21,7 @@
 		  echo "<input type=\"submit\" name=\"$file\" value=\"View\" />";
 		  echo "</form>";
 			echo "<form action=\"delete.php\" method=\"POST\">";
-			echo "<input type=\"submit\" name=\"ext.ext\" value=\"Delete\" />";
+			echo "<input type=\"submit\" name=\"$file\" value=\"Delete\" />";
 			echo "</form>";
 			$num++;
 		}
