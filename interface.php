@@ -19,9 +19,6 @@
 			echo "<form action=\"read.php\" method=\"POST\">";
 		  echo "<input type=\"submit\" value=\"View\" />";
 		  echo "</form>";
-			echo "<form action=\"<?php echo htmlentities($_SERVER['PHP_SELF']); ?>\" method=\"POST\">";
-		  echo "<input type=\"submit\" value=\"Delete\" />";
-		  echo "</form>";
 			$num++;
 		}
 	}
@@ -46,9 +43,7 @@
 	header('content-disposition: inline; filename="'.$filename.'";');
 	readfile($full_path);
 	***/
-	echo "<form action=\"<?php echo htmlentities($_SERVER['PHP_SELF']); ?>\" method=\"POST\">";
-	echo "<input type=\"submit\" value=\"Upload\" />";
-	echo "</form>";
+
   echo "<form action=\"login.php\" method=\"POST\">";
   echo "<input type=\"submit\" value=\"Logout\" />";
   echo "</form>";
