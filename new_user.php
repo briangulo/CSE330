@@ -50,9 +50,11 @@
     printf("Success: new user <strong>%s</strong> was created!", $user);
     fclose($fp);
 
-    mkdir($path, 0777, true);
-    chown($path, $user);
-    exit;
+    if (!file_exists($path)) {
+      mkdir($path, 0777, true);
+      chown($path, $user);
+      exit;
+    }
   }
   ?>
 </body>
