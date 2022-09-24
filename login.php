@@ -23,9 +23,12 @@
   </p>
 
   <?php
+
   if( isset($_SESSION["user"]) ){
     session_destroy();
   }
+
+  printf("User: %s", $_SESSION['user']);
 
   if ( isset($_POST["user"]) ) {
     session_start();
