@@ -29,6 +29,7 @@
   }
 
   printf("User: %s", $_SESSION['user']);
+  printf("User: %s", $_SESSION['file_path']);
 
   if ( isset($_POST["user"]) ) {
     session_start();
