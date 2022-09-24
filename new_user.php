@@ -22,8 +22,8 @@
   <?php
   if ( isset($_POST['user']) ) {
     $user = trim(strtolower($_POST['user']));
-    $fname = "/home/brian/file_sharing/users.txt";
-    $path = "/home/brian/file_sharing/".$user;
+    $fname = "/srv/uploads/users.txt";
+    $path = "/srv/uploads/".$user;
     $h = fopen($fname, "r");
     $fp = fopen($fname, "a");
 

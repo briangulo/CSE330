@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+/srv/uploads<!DOCTYPE html>
 <html>
 <head>
 	<title>Files</title>
@@ -7,7 +7,7 @@
 	<?php
 	session_start();
 	$user = $_SESSION['user'];
-	$userdir = '/home/brian/file_sharing/'.$user;
+	$userdir = '/srv/uploads/'.$user;
 
 	printf("<p>Welcome <strong>%s</strong>!</p>", htmlentities($user));
 

@@ -2,7 +2,7 @@
 session_start();
 function generate_path(){
   $user = $_SESSION['user'];
-  
+
   // Get the filename and make sure it is valid
   $file = $_SESSION['file'];
   if( !preg_match('/^[\w_\.\-]+$/', $file) ){
@@ -18,7 +18,7 @@ function generate_path(){
   	exit;
   }
   ***/
-  $full_path = sprintf("/home/brian/file_sharing/%s/%s", $user, $file);
+  $full_path = sprintf("/srv/uploads/%s/%s", $user, $file);
   return $full_path;
 }
 ?>

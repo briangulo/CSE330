@@ -30,7 +30,7 @@
   if ( isset($_POST["user"]) ) {
     session_start();
     $user = trim(strtolower($_POST['user']));
-    $fname = "/home/brian/file_sharing/users.txt";
+    $fname = "/srv/uploads/users.txt";
     $h = fopen($fname, "r");
     $exists = FALSE;
 
