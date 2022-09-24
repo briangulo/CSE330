@@ -17,10 +17,10 @@
 		if (!is_dir($file)) {
 			printf("<p>%d: %s</p>", $num, htmlentities($file));
 			echo "<form action=\"download.php\" method=\"POST\">";
-		  echo "<input type=\"submit\" name='$num' value=\"View\" />";
+		  echo "<input type=\"submit\" name='$file' value=\"View\" />";
 		  echo "</form>";
 			echo "<form action=\"delete.php\" method=\"POST\">";
-			echo "<input type=\"submit\" name='$num' value=\"Delete\" />";
+			echo "<input type=\"submit\" name='$file' value=\"Delete\" />";
 			echo "</form>";
 			$num++;
 		}
@@ -32,7 +32,7 @@
 	echo '<label for="uploadfile_input">Choose a file to upload:</label> <input name="uploadedfile" type="file" id="uploadfile_input" />';
 	echo '</p>';
 	echo '<p>';
-	echo '<input type="submit" value="Upload File" />';
+	echo '<input type="submit" value="Upload" />';
 	echo '</p>';
 	echo '</form>';
 
