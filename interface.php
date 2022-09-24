@@ -17,10 +17,10 @@
 		if (!is_dir($file)) {
 			printf("<p>%d: %s</p>", $num, $file);
 			echo "<form action=\"download.php\" method=\"POST\">";
-		  echo "<input type=\"submit\" name='file'.$num value=\"View\" />";
+		  echo "<input type=\"submit\" name='$num' value=\"View\" />";
 		  echo "</form>";
 			echo "<form action=\"delete.php\" method=\"POST\">";
-			echo "<input type=\"submit\" name='file'.$num value=\"Delete\" />";
+			echo "<input type=\"submit\" name='$num' value=\"Delete\" />";
 			echo "</form>";
 			$num++;
 		}
