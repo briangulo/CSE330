@@ -28,8 +28,8 @@
     session_destroy();
   }
 
-  printf("User: %s", $_SESSION['user']);
-  printf("User: %s", $_SESSION['file_path']);
+  printf("<p>User: %s</p>", $_SESSION['user']);
+  printf("<p>File path: %s</p>", $_SESSION['file_path']);
 
   if ( isset($_POST["user"]) ) {
     session_start();
