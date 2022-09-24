@@ -32,7 +32,7 @@
 	echo '<label for="uploadfile_input">Choose a file to upload:</label> <input name="uploadedfile" type="file" id="uploadfile_input" />';
 	echo '</p>';
 	echo '<p>';
-	echo '<input type="submit" value="Upload" />';
+	echo '<input type="submit" name="uploader" value="Upload" />';
 	echo '</p>';
 	echo '</form>';
 

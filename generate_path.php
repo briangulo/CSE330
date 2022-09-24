@@ -18,7 +18,6 @@
     }
 
     $_SESSION['full_path'] = sprintf("/srv/uploads/%s/%s", $user, $file);
-    chmod($_SESSION['full_path'], 0747);
   }
   ?>
 </body>
