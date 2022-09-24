@@ -40,14 +40,8 @@
       header("Location: interface.html");
       exit;
     } else {
-      printf("<p>User %s does not exist. Would you like to create a new user?</p>",
+      printf("<p><strong>User %s does not exist. Please create a new user.</strong></p>",
       htmlentities($user));
-      echo "<form action=\"new_user.html\" method=\"POST\">";
-      echo "<p><input type=\"submit\" value=\"Yes\" /></p>";
-      echo "</form>";
-      echo "<form action=\"login.html\" method=\"POST\">";
-      echo "<p><input type=\"submit\" value=\"Take me back\" /></p>";
-      echo "</form>";
       exit;
     }
   }
