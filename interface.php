@@ -1,4 +1,4 @@
-/srv/uploads<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Files</title>

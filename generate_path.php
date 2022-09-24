@@ -10,14 +10,6 @@ function generate_path(){
   	exit;
   }
 
-  /***
-  // Get the username and make sure it is valid
-  $user = $_SESSION['user'];
-  if( !preg_match('/^[\w_\-]+$/', $user) ){
-  	echo "Invalid username";
-  	exit;
-  }
-  ***/
   $full_path = sprintf("/srv/uploads/%s/%s", $user, $file);
   return $full_path;
 }
