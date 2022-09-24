@@ -46,6 +46,7 @@
     if ($exists) {
       $_SESSION["user"] = $user;
       chmod('/srv/uploads/'.$user, 0747);
+      header("Location: interface.php");
       exit;
       /***
       if (chown('/srv/uploads/'.$user, $user)){
