@@ -9,13 +9,19 @@
 	$user = $_SESSION['user'];
 	$userdir = '/home/brian/file_sharing/'.$user;
 
-	printf("<p>Welcome <strong>%s!</strong></p>", htmlentities($user));
+	printf("<p>Welcome <strong>%s</strong>!</p>", htmlentities($user));
 
 	$scan = scandir($userdir);
 	$num = 1;
 	foreach($scan as $file) {
 		if (!is_dir($userdir."/".$file)) {
 			printf("<p>%d: %s</p>", $num, $file);
+			echo "<form action=\"read.php\" method=\"POST\">";
+		  echo "<input type=\"submit\" value=\"View\" />";
+		  echo "</form>";
+			echo "<form action=\"<?php echo htmlentities($_SERVER['PHP_SELF']); ?>\" method=\"POST\">";
+		  echo "<input type=\"submit\" value=\"Delete\" />";
+		  echo "</form>";
 			$num++;
 		}
 	}
@@ -40,6 +46,9 @@
 	header('content-disposition: inline; filename="'.$filename.'";');
 	readfile($full_path);
 	***/
+	echo "<form action=\"<?php echo htmlentities($_SERVER['PHP_SELF']); ?>\" method=\"POST\">";
+	echo "<input type=\"submit\" value=\"Upload\" />";
+	echo "</form>";
   echo "<form action=\"login.php\" method=\"POST\">";
   echo "<input type=\"submit\" value=\"Logout\" />";
   echo "</form>";
