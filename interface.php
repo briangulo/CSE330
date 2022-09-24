@@ -11,9 +11,12 @@
 
 	printf("<p>Welcome <strong>%s!</strong></p>", htmlentities($user));
 
+	$files = scandir($userdir);
 	$num = 1;
-	foreach(glob($userdir.'/*.*') as $file) {
-    printf("<p>%d: %s</p>", $num, $file);
+	foreach($files as $file) {
+		if ($file->isFile()) {
+			printf("<p>%d: %s</p>", $num, $file);
+			num++;
 	}
 /***
 	$filename = $_GET['file'];

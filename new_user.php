@@ -23,6 +23,7 @@
   if ( isset($_POST['user']) ) {
     $user = trim(strtolower($_POST['user']));
     $fname = "/home/brian/file_sharing/users.txt";
+    $path = "/home/brian/file_sharing/".$user;
     $h = fopen($fname, "r");
     $fp = fopen($fname, "a");
 
@@ -47,11 +48,10 @@
     }
 
     printf("Success: new user <strong>%s</strong> was created!", $user);
+    mkdir($path, 0777, true);
+    chown($path, $user);
     fclose($fp);
 
-    #echo '<form action="interface.php" method="POST">';
-    #echo '<p><input type="submit" value="View user file server" /></p>';
-    #echo '</form>';
   }
   ?>
 </body>
