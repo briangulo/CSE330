@@ -17,6 +17,6 @@ function generate_path(){
   }
   ***/
   $full_path = sprintf("/home/brian/file_sharing/%s/%s", $user, $file);
-  $_SESSION['full_path'] = $full_path;
+  return $full_path;
 }
 ?>
