@@ -14,7 +14,7 @@
 	$scan = scandir($userdir);
 	$num = 1;
 	foreach($scan as $file) {
-		if (!is_dir($userdir."/".$file)) {}
+		if (!is_dir($userdir."/".$file)) {
 			printf("<p>%d: %s</p>", $num, $file);
 			$num++;
 		}
