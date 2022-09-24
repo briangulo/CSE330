@@ -28,7 +28,7 @@
 
     while( !feof($h) ){
     	if ( $user == trim(fgets($h)) ) {
-        printf('User %s already exists. Please choose another username.', htmlentities($user));
+        printf('User <strong>%s</strong> already exists. Please choose another username.', htmlentities($user));
         exit;
       } else {
         continue;
@@ -46,11 +46,11 @@
         exit;
     }
 
-    printf("Success: new user %s was created!", $user);
+    printf("Success: new user <strong>%s</strong> was created!", $user);
     fclose($fp);
 
     echo '<form action="interface.php" method="POST">';
-    echo '<p><input type="submit" value="Let\'s go!" /></p>';
+    echo '<p><input type="submit" value="View user file server" /></p>';
     echo '</form>';
   }
   ?>

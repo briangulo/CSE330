@@ -24,6 +24,7 @@
 
   <?php
   if ( isset($_POST['user']) ) {
+    session_start();
     $user = trim(strtolower($_POST['user']));
     $fname = "/home/brian/file_sharing/users.txt";
     $h = fopen($fname, "r");
@@ -42,7 +43,7 @@
       header("Location: interface.php");
       exit;
     } else {
-      printf("<p><strong>User %s does not exist. Please create a new user.</strong></p>",
+      printf("<p><strong>User <strong>%s</strong> does not exist. Please create a new user.</strong></p>",
       htmlentities($user));
       exit;
     }
