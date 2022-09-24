@@ -15,7 +15,7 @@
       <input type="submit" value="Let's go!" />
   	</p>
   </form>
-  <form action="login.html" method="POST">
+  <form action="login.php" method="POST">
     <p><input type="submit" value="Take me back" /></p>
   </form>
 
@@ -41,7 +41,7 @@
           exit;
         }
 
-    } if (fwrite($fp, $user) === FALSE) {
+    } if (fwrite($fp, $user."\n") === FALSE) {
         printf("Error: cannot store username.");
         exit;
     }
