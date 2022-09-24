@@ -26,15 +26,15 @@
 		}
 	}
 
-	echo '<form enctype="multipart/form-data" action="upload.php" method="POST">'
-	echo '<p>'
-	echo '<input type="hidden" name="MAX_FILE_SIZE" value="20000000" />'
-	echo '<label for="uploadfile_input">Choose a file to upload:</label> <input name="uploadedfile" type="file" id="uploadfile_input" />'
-	echo '</p>'
-	echo '<p>'
-	echo '<input type="submit" value="Upload File" />'
-	echo '</p>'
-	echo '</form>'
+	echo '<form enctype="multipart/form-data" action="upload.php" method="POST">';
+	echo '<p>';
+	echo '<input type="hidden" name="MAX_FILE_SIZE" value="20000000" />';
+	echo '<label for="uploadfile_input">Choose a file to upload:</label> <input name="uploadedfile" type="file" id="uploadfile_input" />';
+	echo '</p>';
+	echo '<p>';
+	echo '<input type="submit" value="Upload File" />';
+	echo '</p>';
+	echo '</form>';
 
   echo "<form action=\"login.php\" method=\"POST\">";
   echo "<input type=\"submit\" value=\"Logout\" />";
