@@ -16,7 +16,7 @@
 	foreach($files as $file) {
 		if ($file->isFile()) {
 			printf("<p>%d: %s</p>", $num, $file);
-			num++;
+			$num++;
 	}
 /***
 	$filename = $_GET['file'];
