@@ -14,8 +14,10 @@
 	$scan = scandir($userdir);
 	$num = 1;
 	foreach($scan as $file) {
-		printf("<p>%d: %s</p>", $num, $file);
-		$num++;
+		if (!is_dir($userdir."/".$file)) {}
+			printf("<p>%d: %s</p>", $num, $file);
+			$num++;
+		}
 	}
 /***
 	$filename = $_GET['file'];
