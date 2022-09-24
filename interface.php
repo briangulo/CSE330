@@ -15,13 +15,12 @@
 	$num = 1;
 	foreach($scan as $file) {
 		if (!is_dir($file)) {
-			#$tmp = $file;
-			printf("<p>%d: %s</p>", $num, $file);
+			printf("<p>%d: %s</p>", $num, htmlentities($file));
 			echo "<form action=\"download.php\" method=\"POST\">";
-		  echo "<input type=\"submit\" name=\"$file\" value=\"View\" />";
+		  echo "<input type=\"submit\" name="$file" value=\"View\" />";
 		  echo "</form>";
 			echo "<form action=\"delete.php\" method=\"POST\">";
-			echo "<input type=\"submit\" name=\"$file\" value=\"Delete\" />";
+			echo "<input type=\"submit\" name="$file" value=\"Delete\" />";
 			echo "</form>";
 			$num++;
 		}
