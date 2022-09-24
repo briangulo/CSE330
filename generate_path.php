@@ -1,6 +1,8 @@
 <?php
 session_start();
 function generate_path(){
+  $user = $_SESSION['user'];
+  
   // Get the filename and make sure it is valid
   $file = $_SESSION['file'];
   if( !preg_match('/^[\w_\.\-]+$/', $file) ){
