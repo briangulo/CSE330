@@ -11,6 +11,7 @@
 
     if( !preg_match('/^[\w_\.\-]+$/', $basename) ){
     	echo "Invalid filename";
+      printf("file: %s", $_SESSION['key'])
       echo '<form action="interface.php" method="POST">';
       echo '<p><input type="submit" value="Take me back" /></p>';
       echo '</form>';
