@@ -6,11 +6,11 @@
     $_SESSION['file'] = $key;
     $_SESSION['action'] = $value;
   }
-
+  echo "file: $_SESSION['file']";
   generate_path();
 
   if (unlink($_SESSION['full_path'])) {
-    chmod($_SESSION['full_path'], 0757);
+    #chmod($_SESSION['full_path'], 0757);
     header("Location: action_success.php");
     exit;
   } else {
