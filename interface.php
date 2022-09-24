@@ -16,33 +16,25 @@
 	foreach($scan as $file) {
 		if (!is_dir($userdir."/".$file)) {
 			printf("<p>%d: %s</p>", $num, $file);
-			echo "<form action=\"read.php\" method=\"POST\">";
-		  echo "<input type=\"submit\" value=\"View\" />";
+			echo "<form action=\"download.php\" method=\"POST\">";
+		  echo "<input type=\"submit\" name='file'.$num value=\"View\" />";
 		  echo "</form>";
+			echo "<form action=\"delete.php\" method=\"POST\">";
+			echo "<input type=\"submit\" name='file'.$num value=\"Delete\" />";
+			echo "</form>";
 			$num++;
 		}
 	}
-/***
-	$filename = $_GET['file'];
 
-	// We need to make sure that the filename is in a valid format; if it's not, display an error and leave the script.
-	// To perform the check, we will use a regular expression.
-	if( !preg_match('/^[\w_\.\-]+$/', $filename) ){
-		echo "Invalid filename";
-		exit;
-	}
-
-	$full_path = sprintf("/srv/uploads/%s/%s", $username, $filename);
-
-	// Now we need to get the MIME type (e.g., image/jpeg).  PHP provides a neat little interface to do this called finfo.
-	$finfo = new finfo(FILEINFO_MIME_TYPE);
-	$mime = $finfo->file($full_path);
-
-	// Finally, set the Content-Type header to the MIME type of the file, and display the file.
-	header("Content-Type: ".$mime);
-	header('content-disposition: inline; filename="'.$filename.'";');
-	readfile($full_path);
-	***/
+	echo '<form enctype="multipart/form-data" action="upload.php" method="POST">'
+	echo '<p>'
+	echo '<input type="hidden" name="MAX_FILE_SIZE" value="20000000" />'
+	echo '<label for="uploadfile_input">Choose a file to upload:</label> <input name="uploadedfile" type="file" id="uploadfile_input" />'
+	echo '</p>'
+	echo '<p>'
+	echo '<input type="submit" value="Upload File" />'
+	echo '</p>'
+	echo '</form>'
 
   echo "<form action=\"login.php\" method=\"POST\">";
   echo "<input type=\"submit\" value=\"Logout\" />";

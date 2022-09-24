@@ -36,12 +36,17 @@
       }
     } fclose($h);
 
+    if( !preg_match('/^[\w_\-]+$/', $user) ){
+      echo "Error: only numbers and letters are allowed in your username.";
+      exit;
+    }
+    /***
     for($i=0; $i<count(strlen($user)); $i++){
-    	  if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $user)) {
+    	  if (preg_match('/^[\w_\-]+$/', $user)) {
           printf('Error: only numbers and letters are allowed in your username.');
           exit;
         }
-
+    ***/
     } if (fwrite($fp, $user."\n") === FALSE) {
         printf("Error: cannot store username.");
         exit;
@@ -51,7 +56,6 @@
     fclose($fp);
 
     if (!file_exists($path)) {
-      echo "<p>$path</p>";
       mkdir($path, 0777, true);
       chown($path, $user);
       exit;
