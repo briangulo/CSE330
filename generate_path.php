@@ -11,10 +11,13 @@
     if ($_SESSION['action'] == 'Delete' or $_SESSION['action'] == 'View') {
       $files = array_values(array_filter(glob($_SESSION['userdir']."/*"), 'is_file'));
       $file = $files[$_SESSION['file_num']-1];
-      $fname = pathinfo($file, PATHINFO_FILENAME);
+      $filename = pathinfo($file, PATHINFO_FILENAME);
+      $basename = pathinfo($file, PATHINFO_BASENAME);
+    } else {
+      $basename = $_SESSION['file'];
     }
 
-    if( !preg_match('/^[\w_\.\-]+$/', $fname) ){
+    if( !preg_match('/^[\w_\.\-]+$/', $filename) ){
     	echo "Invalid filename";
       #printf("file: %s", $_SESSION['key']);
       echo '<form action="interface.php" method="POST">';
@@ -23,7 +26,7 @@
     	exit;
     }
 
-    $_SESSION['full_path'] = $file;
+    $_SESSION['full_path'] = sprintf($SESSION['userdir']."/%s", $basename);
   }
   ?>
 </body>
