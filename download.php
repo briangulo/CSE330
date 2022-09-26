@@ -10,7 +10,7 @@
   generate_path();
   chmod($_SESSION['full_path'], 0757);
 
-  if (file_get_contents($_SESSION['full_path']) === TRUE) {
+  if (file_get_contents($_SESSION['full_path']) == TRUE) {
     $contents = file_get_contents($_SESSION['full_path']);
     echo urlencode($contents);
     echo '<form action="interface.php" method="POST">';
