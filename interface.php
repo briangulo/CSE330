@@ -8,6 +8,7 @@
 	session_start();
 	$user = $_SESSION['user'];
 	$userdir = '/srv/uploads/'.$user;
+	$_SESSION['userdir'] = $userdir;
 
 	printf("<p>Welcome <strong>%s</strong>!</p>", htmlentities($user));
 
@@ -19,10 +20,10 @@
 			#$ext = pathinfo($file, PATHINFO_EXTENSION);
 			printf("<p>%d: %s</p>", $num, htmlentities($file));
 			echo "<form action=\"download.php\" method=\"POST\">";
-		  echo "<input type=\"submit\" name=$file value=\"View\" />";
+		  echo "<input type=\"submit\" name=$num value=\"View\" />";
 		  echo "</form>";
 			echo "<form action=\"delete.php\" method=\"POST\">";
-			echo "<input type=\"submit\" name=$file value=\"Delete\" />";
+			echo "<input type=\"submit\" name=$num value=\"Delete\" />";
 			echo "</form>";
 			$num++;
 		}

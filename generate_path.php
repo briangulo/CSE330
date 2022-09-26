@@ -6,12 +6,15 @@
   session_start();
   function generate_path(){
     $user = $_SESSION['user'];
-    $file = $_SESSION['file'];
-    #$fname = pathinfo($file, PATHINFO_FILENAME);
+    #$file = $_SESSION['file'];
 
-    if( !preg_match('/^[\w_\.\-]+$/', $file) ){
+    $files = array_values(array_filter(glob($_SESSION['userdir']."/*"), 'is_file'));
+    $file = $files[$_SESSION['file_num']];
+    $fname = pathinfo($file, PATHINFO_FILENAME);
+
+    if( !preg_match('/^[\w_\.\-]+$/', $fname) ){
     	echo "Invalid filename";
-      printf("file: %s", $_SESSION['key']);
+      #printf("file: %s", $_SESSION['key']);
       echo '<form action="interface.php" method="POST">';
       echo '<p><input type="submit" value="Take me back" /></p>';
       echo '</form>';

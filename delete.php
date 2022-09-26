@@ -3,7 +3,7 @@
   require "generate_path.php";
 
   foreach ($_POST as $key => $value) {
-    $_SESSION['file'] = $key;
+    $_SESSION['file_num'] = $key;
     #$_SESSION["key"] = $key;
     $_SESSION['action'] = $value;
   }
