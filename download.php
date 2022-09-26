@@ -10,9 +10,11 @@
   generate_path();
   chmod($_SESSION['full_path'], 0757);
 
-  if ( $h = fopen($_SESSION['full_path'], "r") ) {
-    #$contents = file_get_contents($_SESSION['full_path']);
-    echo fread($h, filesize($_SESSION['full_path']));
+  if ( $fh = fopen($_SESSION['full_path'], "r") ) {
+    while ($line = fgets($fh)) {
+      echo $line;
+    }
+    #echo fread($h, filesize($_SESSION['full_path']));
     fclose($h);
     echo '<form action="interface.php" method="POST">';
     echo '<p><input type="submit" value="Take me back" /></p>';
