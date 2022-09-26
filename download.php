@@ -10,6 +10,13 @@
   generate_path();
   chmod($_SESSION['full_path'], 0757);
 
-  $contents = file_get_contents($_SESSION['full_path']);
-  echo $contents;
+
+  if (file_get_contents($_SESSION['full_path']) === TRUE) {
+    $contents = file_get_contents($_SESSION['full_path']);
+    echo urlencode($contents);
+  } else {
+    header("Location: action_failure.php");
+    exit;
+  }
+
 ?>
