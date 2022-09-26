@@ -25,7 +25,7 @@
     	exit;
     }
 
-    $_SESSION['full_path'] = sprintf($SESSION['userdir']."/%s", $basename);
+    $_SESSION['full_path'] = sprintf($_SESSION['userdir']."/%s", $basename);
   }
   ?>
 </body>
