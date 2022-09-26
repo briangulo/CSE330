@@ -7,7 +7,7 @@
   function generate_path(){
     $user = $_SESSION['user'];
     $file = $_SESSION['file'];
-    #$basename = pathinfo($file, PATHINFO_FILENAME);
+    #$fname = pathinfo($file, PATHINFO_FILENAME);
 
     if( !preg_match('/^[\w_\.\-]+$/', $file) ){
     	echo "Invalid filename";
