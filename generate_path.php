@@ -7,9 +7,9 @@
   function generate_path(){
     $user = $_SESSION['user'];
     $file = $_SESSION['file'];
-    $basename = pathinfo($file, PATHINFO_FILENAME);
+    #$basename = pathinfo($file, PATHINFO_FILENAME);
 
-    if( !preg_match('/^[\w_\.\-]+$/', $basename) ){
+    if( !preg_match('/^[\w_\.\-]+$/', $file) ){
     	echo "Invalid filename";
       printf("file: %s", $_SESSION['key']);
       echo '<form action="interface.php" method="POST">';

@@ -3,8 +3,8 @@
   require "generate_path.php";
 
   foreach ($_POST as $key => $value) {
-    $_SESSION['file'] = realpath($key);
-    $_SESSION["key"] = realpath($key);
+    $_SESSION['file'] = $key;
+    $_SESSION["key"] = $key;
     $_SESSION['action'] = $value;
   }
   generate_path();
