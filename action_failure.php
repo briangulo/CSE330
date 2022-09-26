@@ -6,7 +6,7 @@
   session_start();
   $action = strtoupper($_SESSION['action']);
 
-  printf("path: %s  file: %s", $_SESSION['full_path'], $_SESSION['file']);
+  printf("path: %s  file: %s", htmlentities($_SESSION['full_path']), htmlentities($_SESSION['file']));
   printf("<p>Uh oh! Your <strong>%s</strong> action failed!</p>", htmlentities($action));
   echo '<form action="interface.php" method="POST">';
   echo '<p><input type="submit" value="Take me back" /></p>';

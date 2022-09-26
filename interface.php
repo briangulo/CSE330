@@ -15,14 +15,14 @@
 	$num = 1;
 	foreach($scan as $file) {
 		if (!is_dir($file)) {
-			$base = pathinfo($file, PATHINFO_BASENAME);
-			$ext = pathinfo($file, PATHINFO_EXTENSION);
+			#$base = pathinfo($file, PATHINFO_BASENAME);
+			#$ext = pathinfo($file, PATHINFO_EXTENSION);
 			printf("<p>%d: %s</p>", $num, htmlentities($file));
 			echo "<form action=\"download.php\" method=\"POST\">";
-		  echo "<input type=\"submit\" name=$base.$ext value=\"View\" />";
+		  echo "<input type=\"submit\" name=$file value=\"View\" />";
 		  echo "</form>";
 			echo "<form action=\"delete.php\" method=\"POST\">";
-			echo "<input type=\"submit\" name=$base.$ext value=\"Delete\" />";
+			echo "<input type=\"submit\" name=$file value=\"Delete\" />";
 			echo "</form>";
 			$num++;
 		}
@@ -43,7 +43,7 @@
   echo "<form action=\"logout.php\" method=\"POST\">";
   echo "<input type=\"submit\" value=\"Logout\" />";
   echo "</form>";
-	printf("file: %s", $_SESSION['key']);
+	printf("file: %s", htmlentities($_SESSION['key']);
 	?>
 </body>
 </html>
