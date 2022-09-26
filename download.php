@@ -12,7 +12,7 @@
 
   if ( $fh = fopen($_SESSION['full_path'], "r") ) {
     while ($line = fgets($fh)) {
-      echo $line;
+      echo $line."\n";
     }
     #echo fread($h, filesize($_SESSION['full_path']));
     fclose($h);
