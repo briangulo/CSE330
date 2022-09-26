@@ -27,6 +27,13 @@
     }
 
     $_SESSION['full_path'] = sprintf($_SESSION['userdir']."/%s", $basename);
+
+    if (is_file($_SESSION['full_path'])) {
+      echo "Error: a file with that file name already exists.";
+      echo '<form action="interface.php" method="POST">';
+      echo '<p><input type="submit" value="Take me back" /></p>';
+      echo '</form>';
+    }
   }
   ?>
 </body>

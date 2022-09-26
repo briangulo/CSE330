@@ -16,8 +16,6 @@
 	$num = 1;
 	foreach($scan as $file) {
 		if (!is_dir($file)) {
-			#$fname = pathinfo($file, PATHINFO_FILENAME);
-			#$ext = pathinfo($file, PATHINFO_EXTENSION);
 			printf("<p>%d: %s</p>", $num, htmlentities($file));
 			echo "<form action=\"download.php\" method=\"POST\">";
 		  echo "<input type=\"submit\" name=$num value=\"View\" />";
@@ -39,12 +37,9 @@
 	echo '</p>';
 	echo '</form>';
 
-	#printf("full path: %s", $_SESSION['full_path']);
-
   echo "<form action=\"logout.php\" method=\"POST\">";
   echo "<input type=\"submit\" value=\"Logout\" />";
   echo "</form>";
-	#printf("file: %s", htmlentities($_SESSION['key']));
 	?>
 </body>
 </html>
