@@ -14,11 +14,12 @@
       $basename = pathinfo($file, PATHINFO_BASENAME);
     } else {
       $basename = $_SESSION['file'];
+      $filename = pathinfo($basename, PATHINFO_FILENAME);
     }
 
     if( !preg_match('/^[\w_\.\-]+$/', $filename) ){
     	echo "Invalid filename";
-      printf("file: %s", $file);
+      printf("file: %s", $filename);
       echo '<form action="interface.php" method="POST">';
       echo '<p><input type="submit" value="Take me back" /></p>';
       echo '</form>';
