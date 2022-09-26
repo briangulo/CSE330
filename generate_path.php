@@ -9,7 +9,7 @@
     #$file = $_SESSION['file'];
 
     $files = array_values(array_filter(glob($_SESSION['userdir']."/*"), 'is_file'));
-    $file = $files[$_SESSION['file_num']];
+    $file = $files[$_SESSION['file_num']-1];
     $fname = pathinfo($file, PATHINFO_FILENAME);
 
     if( !preg_match('/^[\w_\.\-]+$/', $fname) ){
@@ -21,7 +21,7 @@
     	exit;
     }
 
-    $_SESSION['full_path'] = sprintf("/srv/uploads/%s/%s", $user, $file);
+    $_SESSION['full_path'] = $file;
   }
   ?>
 </body>
