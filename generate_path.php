@@ -27,7 +27,6 @@
     }
 
     $_SESSION['full_path'] = sprintf($_SESSION['userdir']."/%s", $basename);
-    }
   }
   ?>
 </body>
