@@ -19,10 +19,10 @@
 			$base = pathinfo($file, PATHINFO_BASENAME);
 			$ext = pathinfo($file, PATHINFO_EXTENSION);
 			echo "<form action=\"download.php\" method=\"POST\">";
-		  echo "<input type=\"submit\" name=$file value=\"View\" />";
+		  echo "<input type=\"submit\" name=$base.\".\"$ext value=\"View\" />";
 		  echo "</form>";
 			echo "<form action=\"delete.php\" method=\"POST\">";
-			echo "<input type=\"submit\" name=$file value=\"Delete\" />";
+			echo "<input type=\"submit\" name=$base.\".\"$ext value=\"Delete\" />";
 			echo "</form>";
 			$num++;
 		}
