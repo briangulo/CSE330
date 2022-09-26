@@ -8,9 +8,11 @@
     $user = $_SESSION['user'];
     #$file = $_SESSION['file'];
 
-    $files = array_values(array_filter(glob($_SESSION['userdir']."/*"), 'is_file'));
-    $file = $files[$_SESSION['file_num']-1];
-    $fname = pathinfo($file, PATHINFO_FILENAME);
+    if ($_SESSION['action'] == 'Delete' or $_SESSION['action'] == 'View') {
+      $files = array_values(array_filter(glob($_SESSION['userdir']."/*"), 'is_file'));
+      $file = $files[$_SESSION['file_num']-1];
+      $fname = pathinfo($file, PATHINFO_FILENAME);
+    }
 
     if( !preg_match('/^[\w_\.\-]+$/', $fname) ){
     	echo "Invalid filename";
