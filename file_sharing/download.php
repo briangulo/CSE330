@@ -16,13 +16,12 @@
     }
     #echo fread($h, filesize($_SESSION['full_path']));
     fclose($h);
-    echo '<form action="interface.php" method="POST">';
-    echo '<p><input type="submit" value="Take me back" /></p>';
-    echo '</form>';
     exit;
   } else {
     header("Location: action_failure.php");
     exit;
   }
-
 ?>
+<form action="interface.php" method="POST">
+<p><input type="submit" value="Take me back" /></p>
+</form>
