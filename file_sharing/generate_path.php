@@ -18,7 +18,7 @@
     }
 
     if( !preg_match('/^[\w_\.\-]+$/', $filename) ){
-      $_SESSION['bad_name'] = 0;
+      $_SESSION['bad_name'] = 1;
       header("Location: action_failure.php");
     	exit;
     }
