@@ -18,11 +18,8 @@
     }
 
     if( !preg_match('/^[\w_\.\-]+$/', $filename) ){
-    	printf("Invalid filename");
-      #printf("file: %s", $filename);
-      echo '<form action="interface.php" method="POST">';
-      echo '<p><input type="submit" value="Take me back" /></p>';
-      echo '</form>';
+      $_SESSION['bad_name'] = 0;
+      header("Location: action_failure.php");
     	exit;
     }
 
