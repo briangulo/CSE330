@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html>
+<head><title>Upload</title></head>
+<body>
 <?php
   session_start();
   require "generate_path.php";
@@ -11,7 +15,7 @@
   #chmod($_SESSION['full_path'], 0757);
 
   if ( $fh = fopen($_SESSION['full_path'], "r") ) {
-    $ext = pathinfo($fh, PATHINFO_EXTENSION);
+    $ext = strtolower(pathinfo($fh, PATHINFO_EXTENSION));
     if ( $ext = 'jpg' OR $ext = 'png') {
       $fileData = exif_read_data($file);
       header("Content-Type: " . $fileData["MimeType"]);
@@ -31,3 +35,5 @@
 <form action="interface.php" method="POST">
 <p><input type="submit" value="Take me back" /></p>
 </form>
+</body>
+</html>

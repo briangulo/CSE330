@@ -24,9 +24,6 @@
 
   <?php
 
-  #printf("<p>User: %s</p>", $_SESSION['user']);
-  #printf("<p>File path: %s</p>", $_SESSION['file_path']);
-
   if ( isset($_POST["user"]) ) {
     session_start();
     $user = trim(strtolower($_POST['user']));
@@ -48,14 +45,7 @@
       chmod('/srv/uploads/'.$user, 0747);
       header("Location: interface.php");
       exit;
-      /***
-      if (chown('/srv/uploads/'.$user, $user)){
-        header("Location: interface.php");
-        exit;
-      } else {
-        printf("Error: cannot change ownership.");
-      }
-    ***/
+
     } else {
       printf("<p><strong>User <strong>%s</strong> does not exist. Please create a new user.</strong></p>",
       htmlentities($user));

@@ -9,15 +9,6 @@ foreach ($_POST as $key => $value) {
 $_SESSION['file'] = basename($_FILES['uploadedfile']['name']);
 generate_path();
 
-/***
-if ( is_file($_SESSION['full_path']) ) {
-	echo "Error: a file with that file name already exists.";
-	echo '<form action="interface.php" method="POST">';
-	echo '<p><input type="submit" value="Take me back" /></p>';
-	echo '</form>';
-}
-***/
-
 if( move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $_SESSION['full_path']) ){
 	chmod($_SESSION['full_path'], 0757);
 	header("Location: action_success.php");
