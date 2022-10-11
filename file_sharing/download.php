@@ -8,12 +8,18 @@
   }
 
   generate_path();
-  chmod($_SESSION['full_path'], 0757);
+  #chmod($_SESSION['full_path'], 0757);
 
   if ( $fh = fopen($_SESSION['full_path'], "r") ) {
-    while ($line = fgets($fh)) {
-      echo $line."\n";
+    $ext = pathinfo($fh, PATHINFO_EXTENSION);
+    if ( $ext = 'jpg' OR $ext = 'png') {
+      $fileData = exif_read_data($file);
+      header("Content-Type: " . $fileData["MimeType"]);
+      header("Content-Length: " . $fileData["FileSize"]);
     }
+    #while ($line = fgets($fh)) {
+    #echo $line."\n";
+    #}
     #echo fread($h, filesize($_SESSION['full_path']));
     fclose($h);
     exit;
