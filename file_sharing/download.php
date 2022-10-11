@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><title>Upload</title></head>
+<head><title>Download</title></head>
 <body>
 <?php
   session_start();

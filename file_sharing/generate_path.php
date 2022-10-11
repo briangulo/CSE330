@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><title>Blank</title></head>
+<head><title>Working...</title></head>
 <body>
   <?php
   session_start();
